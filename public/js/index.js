@@ -4,11 +4,6 @@ socket.on('connect', function () {
     console.log('connected to server');
 });
 
-socket.on('createMessage', {
-    from: 'Andrew',
-    text: 'Yup, that works for me'
-});
-
 socket.on('disconnect', function () {
     console.log('disconnected from server');
 });
