@@ -34,8 +34,7 @@ io.on('connection', (socket) => {
         'Admin', 'New user joined'
     ));
 
-    socket.on('createMessage', (message) => {
-        console.log('createMessage', message);
+    socket.on('createMessage', (message, callback) => {
         
         
         // io.emit('newMessage', {
@@ -50,9 +49,11 @@ io.on('connection', (socket) => {
         //     createAt: new Date().getTime()
         // });
 
-        socket.broadcast.emit('newMessage', generateMessage(
+        console.log('createMessage', message);
+        io.emit('newMessage', generateMessage(
             message.from, message.text
         ));
+        callback('This is from the server.');
     });
 
     socket.on('disconnect', () => {
