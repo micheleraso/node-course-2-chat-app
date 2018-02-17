@@ -1,3 +1,5 @@
+//https://facebook.github.io/jest/
+
 var expect = require('expect');
 
 var { generateMessage, generateLocationMessage } = require('./message');
